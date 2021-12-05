@@ -13,26 +13,20 @@ class Tests(Base):
     positive = Column(Integer)
     negative = Column(Integer)
 
-class Region(Base):
-    __tablename__ = "REGION"
-  
-    id = Column(Integer, primary_key=True, index=True)
-    title = Column(String)
-    code = Column(String)
-    abbreviation = Column(String)
-
-
-
 class Hospitals(Base):
     __tablename__ = "Hospitals"
+
     id = Column(Integer, primary_key=True, index=True)
-    region_id =  Column(Integer, ForeignKey("REGION.id"))
     free_all = Column(Integer)
     occupied_jis_covid = Column(Integer)
     occupied_oaim_covid = Column(Integer)
     occupied_o2_covid = Column(Integer)
     occupied_other_covid = Column(Integer)
     updated_at= Column(String)
+    title = Column(String)
+    code = Column(String)
+    abbreviation = Column(String)
+
 
 
 class HospitalStaff(Base):

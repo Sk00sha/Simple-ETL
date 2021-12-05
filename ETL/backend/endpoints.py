@@ -46,8 +46,3 @@ def hospitals(db:Session=Depends(get_db)):
 def hospital_staff(db:Session=Depends(get_db)):
     hospital_staff=db.query(models.HospitalStaff).all()
     return hospital_staff
-
-@app.get("/regions")
-def regions(db:Session=Depends(get_db)):
-    regions=db.query(models.Region).all()
-    return regions
